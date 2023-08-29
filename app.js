@@ -7,59 +7,107 @@ var Mobile = document.getElementById("Mobile_Number");
 var Courses = document.getElementById("Select_Courses");
 var Qualification = document.getElementById("Select_Qualification");
 var Gender = document.getElementById("Select_Gender");
-
-var message = document.getElementById("message");
-var success = document.getElementById("success");
 function addData(){
 if (Name.value === ""){
-    //  alert("Full name required")
      message.style.display = "block";
+     message.innerHTML = "Name requried.";
+     message.style.color = "red";
+     Name.focus()
      setTimeout(()=>{
         message.style.display = "none";
      },2000);
    } else if(FatherName.value === ""){
-    message2.style.display = "block";
+    message.style.display = "block";
+    message.innerHTML = "Father name requried";
+    message.style.color = "red";
+    FatherName.focus()
     setTimeout(()=>{
-       message2.style.display = "none";
+       message.style.display = "none";
     },2000);
    }else if(Email.value === ""){
-    message3.style.display = "block";
+    message.style.display = "block";
+    message.innerHTML = "Email address required";
+    message.style.color = "red";
+    Email.focus()
     setTimeout(()=>{
-       message3.style.display = "none";
+       message.style.display = "none";
     },2000);
-   }else if(Password.value === ""){
-    message4.style.display = "block";
+   } else if(Password.value === ""){
+      message.style.display = "block";
+      message.innerHTML = "Password required";
+      message.style.color = "red";
+      Password.focus()
+      setTimeout(()=>{
+         message.style.display = "none";
+      },2000);
+    } else if(Password.value.length !== 6){
+    message.style.display = "block";
+    message.innerHTML = "Please enter 6 digits password";
+    message.style.color = "red";
+    Password.focus()
     setTimeout(()=>{
-       message4.style.display = "none";
+       message.style.display = "none";
     },2000);
    } else if(CNIC.value === ""){
-    message5.style.display = "block";
+      message.style.display = "block";
+      message.innerHTML = "CNIC number required";
+      message.style.color = "red";
+      CNIC.focus()
+      setTimeout(()=>{
+         message.style.display = "none";
+      },2000);
+   } else if(CNIC.value.length !== 14){
+    message.style.display = "block";
+    message.innerHTML = "Please enter valid numbers in CNIC";
+    message.style.color = "red";
+    CNIC.focus()
     setTimeout(()=>{
-       message5.style.display = "none";
+       message.style.display = "none";
     },2000);
    } else if(Mobile.value === ""){
-    message6.style.display = "block";
+      message.style.display = "block";
+      message.innerHTML = "Mobile number required";
+      message.style.color = "red";
+      Mobile.focus()
+      setTimeout(()=>{
+         message.style.display = "none";
+      },2000);
+   } else if(Mobile.value.length !== 11){
+    message.style.display = "block";
+    message.innerHTML = "Please enter valid phone number";
+    message.style.color = "red";
+    Mobile.focus()
     setTimeout(()=>{
-       message6.style.display = "none";
+       message.style.display = "none";
     },2000);
    } else if(Courses.value === ""){
-    message7.style.display = "block";
+    message.style.display = "block";
+    message.innerHTML = "Select Courese";
+    message.style.color = "red";
+    Courses.focus()
     setTimeout(()=>{
-       message7.style.display = "none";
+       message.style.display = "none";
     },2000);
    } else if(Qualification.value === ""){
-    message8.style.display = "block";
+    message.style.display = "block";
+    message.innerHTML = "Select Qualification";
+    message.style.color = "red";
+    Qualification.focus()
     setTimeout(()=>{
-       message8.style.display = "none";
+       message.style.display = "none";
     },2000);
    } else if(Gender.value === ""){
-    message9.style.display = "block";
+    message.style.display = "block";
+    message.innerHTML = "Select Gender";
+    message.style.color = "red";
+    Gender.focus()
     setTimeout(()=>{
-       message9.style.display = "none";
+       message.style.display = "none";
     },2000);
    }  else {
-    message.style.display ="none"
-    success.style.display ="block"
+    message.style.display ="block"
+    message.innerHTML = "success"
+    message.style.color = "green"
     console.log(Name.value);
     console.log(FatherName.value);
     console.log(Email.value);
@@ -70,7 +118,16 @@ if (Name.value === ""){
     console.log(Qualification.value);
     console.log(Gender.value);
     setTimeout(()=>{
-        success.style.display = "none ";
+        message.style.display = "none ";
+        Name.value = "";
+        FatherName.value = "";
+        Email.value = "";
+        Password.value = "";
+        CNIC.value = "";
+        Mobile.value = "";
+        Courses.value = "";
+        Qualification.value = "";
+        Gender.value = "";
      },2000);
    }
 }
